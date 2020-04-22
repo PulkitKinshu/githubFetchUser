@@ -1,0 +1,36 @@
+header {
+  background: #147abc;
+
+  .row {
+    .form-control {
+      height: calc(1.5em + 0.75rem + 10px);
+      border-right: 0px;
+    }
+    .input-group {
+      position: relative;
+      .form-control {
+        border-top-right-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
+      }
+
+      i {
+        position: absolute;
+        right: 15px;
+        top: 30%;
+        color: #6c757d;
+        z-index: 9;
+      }
+    }
+  }
+}
+
+.placeholder {
+  color: grey;
+}
+select option:first-child {
+  color: grey;
+  display: none;
+}
+select option {
+  color: #555;
+} // bootstrap default color

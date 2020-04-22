@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  background: #f6f6f6 !important;
+  margin: 0;
+  font-family: "Lato", sans-serif !important;
+}
+
+.container {
+  @media (min-width: 1200px) {
+    max-width: 940px !important;
+  }
+}

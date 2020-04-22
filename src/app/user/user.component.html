@@ -1,0 +1,76 @@
+<div class="total-result">Total Results: {{userCount || 0}}</div>
+
+
+<div *ngIf="userInfo.length == 0">
+
+    <div class="card shadow-sm mb-3 noUser py-3">
+        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+
+            <img src="../../assets/noUser.jpg" alt="">
+
+            <h2 class="mt-4">
+                Please search for any user
+            </h2>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- User Cards -->
+<div class="card shadow-sm mb-3" *ngFor="let user of userInfo; let i = index">
+    <div class="card-body">
+        <div class="d-flex">
+            <img [src]="user.avatar_url" alt="">
+
+            <div class="text-wrap">
+                <h3>{{user.login}}</h3>
+
+                <p class="subdata mb-3">Profile URL: <a [href]="user.html_url" target="_blank">{{user.html_url}}</a></p>
+
+                <div class="d-flex justify-content-between w-100">
+                    <div>
+                        <p class="subdata">Data One: Value One</p>
+                        <p class="subdata">Data Two: Value Two</p>
+                    </div>
+
+                    <!-- <button class="btn" data-toggle="collapse" data-target="#List-{{ i }}">Details</button> -->
+                    <a href="#List-{{ i }}" class="btn"  data-toggle="collapse">Details</a>
+
+
+                </div>
+
+                <div id="List-{{ i }}" class="collapse mt-4">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Repository</th>
+                                <th>Language</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>John</td>
+                                <td>Doe</td>
+                            </tr>
+                            <tr>
+                                <td>Mary</td>
+                                <td>Moe</td>
+                            </tr>
+                            <tr>
+                                <td>July</td>
+                                <td>Dooley</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
