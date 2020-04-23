@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FetchDataService } from '../fetch-data.service';
 
 @Component({
   selector: 'app-user',
@@ -13,15 +14,17 @@ export class UserComponent implements OnInit {
 
   temp;
 
-  constructor() { }
+  constructor(private _fetchData: FetchDataService) { }
 
   ngOnInit() {
   }
 
+  userDetail: any ;
+
 
   sortAlpha() {
     this.userInfo = this.userInfo.sort((val1, val2) => {
-      return ((val2.login >val1.login) ? -1 : (((val2.login < val1.login) ? 1 : 0)))
+      return ((val2.login > val1.login) ? -1 : (((val2.login < val1.login) ? 1 : 0)))
     })
   }
 
@@ -31,6 +34,13 @@ export class UserComponent implements OnInit {
     })
 
     console.log(this.temp)
+  }
+
+  showDetail(name) {
+    this._fetchData.fetchDetail(name).subscribe((x: any) => {
+      this.userDetail = x;
+     
+    })
   }
 
 

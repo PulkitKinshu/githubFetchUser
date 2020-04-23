@@ -60,4 +60,12 @@
       font-weight: 500;
     }
   }
+
+  .table{
+    tr{
+      td:first-child,th:first-child{
+        padding-left: 120px;
+      }
+    }
+  }
 }

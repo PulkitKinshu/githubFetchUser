@@ -35,41 +35,29 @@
                     </div>
 
                     <!-- <button class="btn" data-toggle="collapse" data-target="#List-{{ i }}">Details</button> -->
-                    <a href="#List-{{ i }}" class="btn"  data-toggle="collapse">Details</a>
-
+                    <a href="#List-{{ i }}" class="btn" (click)="showDetail(user.login)" data-toggle="collapse">Details</a>
 
                 </div>
-
-                <div id="List-{{ i }}" class="collapse mt-4">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>Repository</th>
-                                <th>Language</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>John</td>
-                                <td>Doe</td>
-                            </tr>
-                            <tr>
-                                <td>Mary</td>
-                                <td>Moe</td>
-                            </tr>
-                            <tr>
-                                <td>July</td>
-                                <td>Dooley</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-
-
-
             </div>
+
+        </div>
+        <div id="List-{{ i }}" class="collapse mt-4">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Repository</th>
+                        <th>Language</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of userDetail">
+                        <td>{{item.name}}</td>
+                        <td>{{item.language || '-'}}</td>
+                    </tr>
+                 
+                </tbody>
+            </table>
         </div>
 
     </div>

@@ -13,4 +13,11 @@ export class FetchDataService {
   fetchUser(text) {
     return this.http.get(this.endPoint + '?q=' + text)
   }
+
+
+  fetchDetail(name){
+    return this.http.get(`https://api.github.com/users/${name}/repos`)
+  }
+
+  
 }
